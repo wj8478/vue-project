@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="wrap">
+        {{message}}
+    </div> -->
+<!--v-bind指令来绑定Dom节点属性  -->
+    <div id="warp">
+        {{ message }} 
+        
+        <!-- header-->
+         <header v-bind:title="headerTitle">
+             {{ headerTitle }}
+         </header>   
+    </div>
+    
+    
+    <!-- 双向数据绑定 -->
+    <div id="app">
+        <p>{{message}}</p>
+        <input v-model="inputMessage">
+    </div>
+    
+</body>
+<script src="./vue.js"></script>
+<script type="text/javascript">
+//  console.log(Vue);
+// var vm=new Vue({
+//     el:"#wrap",
+//     data:function(){
+//         return{
+//             message:"我是彭于晏"
+//         }
+//     }
+// })
+var vm = new Vue ({
+    el: "#warp",
+    data: function () {
+        return {
+            message: "hello vue",
+            headerTitle: "我是彭于晏的小迷妹"
+        }
+    }
+})
+
+var vm = new Vue ({
+    el: "#warp",
+    data: function () {
+        return {
+            message: "hello vue",
+            headerTitle: "我是header标签title值",
+            navMessage: "我是导航标签",
+            navMessageTitle: "我是导航标签title",
+        }
+    }
+})
+
+var vm=new Vue({
+    el:"#app",
+    data:function(){
+        return{
+            message:""
+        }
+    }
+})
+
+</script>
+</html>
